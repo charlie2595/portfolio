@@ -8,6 +8,8 @@ export default defineConfig({
     minify: 'esbuild',
     outDir: 'dist',
     assetsDir: 'assets',
+    sourcemap: false,
+    copyPublicDir: true,
     rollupOptions: {
       output: {
         manualChunks: undefined,
