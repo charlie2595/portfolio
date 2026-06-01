@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.gray.100');
+}
+
+::-webkit-scrollbar-track:dark {
+  background: theme('colors.gray.900');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.gray.300');
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:dark {
+  background: theme('colors.gray.700');
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.gray.400');
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-300;
+}
+
+/* Custom link styles */
+a {
+  @apply text-accent-600 hover:text-accent-700 dark:text-accent-400 dark:hover:text-accent-300 transition-colors;
+}
+
+/* Selection */
+::selection {
+  @apply bg-accent-600 text-white dark:bg-accent-500;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Prose styling for blog/articles */
+.prose {
+  @apply max-w-none;
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *)) {
+  @apply bg-gray-100 dark:bg-gray-900 px-1.5 py-0.5 rounded text-sm;
+}
+
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+  @apply bg-gray-900 dark:bg-gray-950 rounded-lg overflow-x-auto;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-accent-600 to-blue-600 bg-clip-text text-transparent dark:from-accent-400 dark:to-blue-400;
+}
+
+/* Section padding */
+.section-padding {
+  @apply py-20 md:py-28;
+}
+
+/* Container */
+.container {
+  @apply mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
+}
